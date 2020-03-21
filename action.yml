@@ -1,0 +1,19 @@
+---
+name: Ansible Galaxy Role Import
+author: Janne K <0x022b@gmail.com>
+description: Imports role into Ansible Galaxy
+
+inputs:
+  galaxy_api_key:
+    description: Ansible Galaxy API Key
+    required: true
+
+runs:
+  using: docker
+  image: docker://0x022b/ansible-galaxy-role-import:2.9
+  env:
+    galaxy_api_key: ${{ inputs.galaxy_api_key }}
+
+branding:
+  icon: upload
+  color: gray-dark
